@@ -4,6 +4,7 @@ export const messages = {
     userUpdated: 'User updated successfully.',
     userDeleted: 'User deleted successfully.',
     userNotFound: 'User not found.',
+    emailAlreadyExists: 'Email Already Exists',
     vehicleCreated: 'Vehicle created successfully.',
     vehicleExists: 'Vehicle with this number plate already exists.',
     bookingCreated: 'Booking created successfully.',

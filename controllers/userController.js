@@ -29,7 +29,12 @@ export const updateUser = async (req, res) => {
         if (!user) {
             return res.status(404).json({ message: messages.userNotFound });
         }
-
+        if (email && email !== user.email) {
+            const existingUser = await User.findOne({ email, isDeleted: false });
+            if (existingUser) {
+                return res.status(400).json({ message: messages.emailAlreadyExists });
+            }
+        }
         user.name = name || user.name;
         user.email = email || user.email;
         user.phone = phone || user.phone;

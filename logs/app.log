@@ -1,3 +1,0 @@
-[2024-10-04T14:37:33.307] [ERROR] error - [userController.js -> createUser] phon is not defined
-[2024-10-04T15:11:57.827] [ERROR] error - [userController.js -> createUser] User validation failed: email: Path `email` is required.
-[2024-10-04T15:12:49.820] [ERROR] error - [userController.js -> createUser] User validation failed: email: Path `email` is required.
