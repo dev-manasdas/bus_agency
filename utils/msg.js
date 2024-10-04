@@ -8,6 +8,7 @@ export const messages = {
     vehicleExists: 'Vehicle with this number plate already exists.',
     bookingCreated: 'Booking created successfully.',
     bookingNotFound: 'Booking not found.',
+    userNotAuthorized: 'User Not Authorized',
     vehicleNotAvailable: 'The selected vehicle is not available.',
     bookingAlreadyCompleted: 'Booking already completed.',
     bookingCompleted: 'Booking completed successfully.',

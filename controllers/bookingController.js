@@ -1,5 +1,6 @@
 import Booking from '../models/bookingModel.js';
 import Vehicle from '../models/vehicleModel.js';
+import User from '../models/userModel.js';
 import { messages } from '../utils/msg.js';
 import { logError } from '../utils/customLog.js';
 const filename = 'bookingController.js';
@@ -8,6 +9,13 @@ export const createBooking = async (req, res) => {
     const { user_id, vehicle_id, pickup_location, drop_location, distance, seats } = req.body;
 
     try {
+
+          // Check if the user is deleted
+        const user = await User.findById(user_id);
+        if (!user || user.isDeleted) {
+            return res.status(403).json({ message: messages.userNotAuthorized });
+        }
+
         // Check if the vehicle is available
         const vehicle = await Vehicle.findById(vehicle_id);
         if (!vehicle || !vehicle.isAvailable) {
